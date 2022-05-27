@@ -2,25 +2,33 @@
 import './Content.sass'
 import Card from '../Card/Card'
 import audToasty from '../img/audio/TOASTY.mp3'
-import audSoup from '../img/audio/soup.mp3'
-import audOrks from '../img/audio/orks1.mp3'
 import Impi from '../Impi/Impi'
-const arrImage = ['spaceMarine1','spaceMarine2','spaceMarine3','spaceMarine4','spaceMarine5','spaceMarine6']
+import { store } from '../store/reduser'
+import { useState } from 'react'
+
+import { spaceMarines } from '../arrImage'
+import { chaos } from '../arrImage'
+
+
 const  toasty = new Audio(audToasty);
-const  soup = new Audio(audSoup);
-const  orks = new Audio(audOrks);
 let count = 0
 let selectedCard = 0 
 let selectedCard2 = 0 
 
-function Content() {
 
-  console.log('Content');
+
+
+function Content() {
+let [fraction,setFraction] = useState(chaos) 
+
+
 
 
   function audioTerst(){
     if(count === 2){
       toasty.play()
+      store.dispatch({ type: 'show' })
+      console.log(store.getState());
     }
 }
 
@@ -52,7 +60,6 @@ function getImgForContext(array){
   
 
 function reduserCard(e){
-  console.log(e.propertyName);
   let elem = e.target.parentElement.parentElement
   if(selectedCard === 0){
     selectedCard = elem
@@ -107,7 +114,7 @@ function removeClass(el){
 
 
 
-  let imageCards = getImgForContext(arrImage).map((item,index)=>{
+  let imageCards = getImgForContext(fraction).map((item,index)=>{
     return <Card funcAddClass={reduserCard}   pers={item} key={index}  link={item}/>
   })
 

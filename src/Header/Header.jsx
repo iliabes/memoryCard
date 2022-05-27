@@ -1,6 +1,8 @@
 import HeadBtn from "../HeadBtn/HeadBtn";
 import Logo from "../Logo/Logo";
 import './Header.sass'
+import Select from "../Select/Select";
+import VolumeControl from "../VolumeControl/VolumeControl";
 
 function Header() {
 
@@ -10,10 +12,12 @@ function Header() {
     <>
     <header>
         <Logo/>
+        
         <div className="header-contBtn-left">
+            <Select/>
             <HeadBtn val={'val1'}/>
             <HeadBtn val={'val2'}/>
-            <HeadBtn val={'val3'}/>
+            <VolumeControl/>
         </div>
     </header>
 
