@@ -15,8 +15,7 @@ function Header() {
         
         <div className="header-contBtn-left">
             <Select/>
-            <HeadBtn val={'val1'}/>
-            <HeadBtn val={'val2'}/>
+
             <VolumeControl/>
         </div>
     </header>

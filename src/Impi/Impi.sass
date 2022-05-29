@@ -1,26 +1,31 @@
 .impi
-    background-color: red
+
     height: 200px
     width:  200px
     position: absolute
     bottom: 0
-    right: -200px
+    right: 20px
+    transform: translateX(240px)
+
 
 
 .impi-animate
     animation-name: impi-left 
-    animation-duration: 1s
+    animation-duration: 1.4s
 
 
 @keyframes impi-left 
   from 
-    right: -200px
+
+    transform: translateX(230px)
   
   50%
-    right: 200px
+
+    transform: translateX(-50px)
       
   to 
-    right: -200px
+
+    transform: translateX(230px)
   
 
 

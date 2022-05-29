@@ -2,12 +2,13 @@ import  './Select.sass'
 import { useState } from 'react';
 import Select1 from 'react-select'
 import { current } from '@reduxjs/toolkit';
-
+import { store } from '../store/reduser';
 
 const options = [
   { value: 'space marine', label: 'Space Marine' },
-  { value: 'chaos', label: 'Chaos' },
-  { value: 'orks', label: 'Orks' }
+  { value: 'tau', label: 'Tau' },
+  { value: 'orks', label: 'Orks' },
+  { value: 'plus', label: 'plus' }
 ]
 
 
@@ -39,6 +40,12 @@ function Select(props) {
 
   const onChange = (e)=> {
     setSelected(e.value);
+    switch(e.value){
+      case 'space marine':store.dispatch({ type: 'space marine', });break;
+      case 'tau':store.dispatch({ type: 'tau', });break;
+      case 'orks':store.dispatch({ type: 'orks', });break;
+      case 'plus':store.dispatch({ type: 'plus', });break;
+    }
   }
 
   const getValue = ()=> {

@@ -7,20 +7,30 @@ import audOrks from '../img/audio/orks1.mp3'
 
 
 function VolumeControl(props) {
+  console.log('musik');
+
   // const [play] = useSound(audSoup);
+  let isMusik = false
   const  soup = new Audio(audSoup);
   const  orks = new Audio(audOrks);
 
   useEffect(() => {
-    // document.addEventListener('mouseover',()=>{soup.play()})
+    document.addEventListener('click',()=>{
+      if(isMusik === true){
+        isMusik = true
+        console.log('musik')
+        soup.play()
+      }
+      
+    })
   });
 
-  // function stopMusik(){
-  //   soup.stop()
-  //   console.log('stop');
-  // }
+  function stopMusik(){
+    soup.pause()
+    console.log('stop');
+  }
   return (
-      <div  className='volumeControl'>Звук</div>
+      <div onClick={stopMusik}  className='volumeControl'>Звук</div>
   );
 }
 

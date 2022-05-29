@@ -2,8 +2,10 @@ import './Card.sass'
 import backFace from '../img/akv.jpg'
 
 
+
 export default function Card(props) { 
     console.log('card');
+
     return (
       <div data-pers={props.link} className="content-card">
       <div className="back">
