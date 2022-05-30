@@ -2,7 +2,7 @@ import  './Select.sass'
 import { useState } from 'react';
 import Select1 from 'react-select'
 import { current } from '@reduxjs/toolkit';
-import { store } from '../store/reduser';
+import { store } from '../store/store';
 
 const options = [
   { value: 'space marine', label: 'Space Marine' },

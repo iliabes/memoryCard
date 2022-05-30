@@ -16,7 +16,6 @@ export function sound(state = 0,action){
 export function impi(state = { value: false }, action) {
     switch (action.type) {
       case 'show':
-        console.log('dispath true');
         return { value: true}
       case 'hide':
         return { value: false }
@@ -29,8 +28,9 @@ export function impi(state = { value: false }, action) {
   
     switch (action.type) {
       case 'plus':
-        console.log('plus');
+        
         let numberFraction = state.value
+        console.log('plus',numberFraction);
         numberFraction++
         if(numberFraction > 2){numberFraction = 0}
         return { value: numberFraction }
@@ -51,5 +51,5 @@ export function impi(state = { value: false }, action) {
 
 
 export default combineReducers({
-    impi,sound,fraction
+    sound,fraction
 })

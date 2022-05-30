@@ -1,5 +1,5 @@
 import './Card.sass'
-import backFace from '../img/akv.jpg'
+import backFace from '../img/img/4.png'
 
 
 

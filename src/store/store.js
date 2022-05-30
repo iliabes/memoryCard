@@ -1,6 +1,7 @@
 
 import { createStore } from 'redux'
-import combineReduser from '../redusers'
+import { impi } from '../reduser/redusers'
+import combineReduser from '../reduser/redusers'
 
 // export function reducer(state = { value: false }, action) {
 //     switch (action.type) {
@@ -17,6 +18,6 @@ import combineReduser from '../redusers'
 
 export let store = createStore(combineReduser)
 
-
+export let storeImpi  = createStore(impi)
 
 

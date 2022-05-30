@@ -3,7 +3,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Content from './Content/Content';
 import React, { useState } from 'react';
-import { store } from './store/reduser';
+import { store } from './store/store';
 import Impi from './Impi/Impi';
 
 

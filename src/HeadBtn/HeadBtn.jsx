@@ -4,7 +4,9 @@ import  './HeadBtn.sass'
 function HeadBtn(props) {
   return (
     <>
-      <div className="header-btn-black">{props.val}</div>
+      <div className="header-btn-black">
+        <img src={props.val} alt="" />
+      </div>
     </>
   );
 }

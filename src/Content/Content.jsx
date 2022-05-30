@@ -2,8 +2,11 @@
 import './Content.sass'
 import Card from '../Card/Card'
 import audToasty from '../img/audio/TOASTY.mp3'
-import { store } from '../store/reduser'
+import { store } from '../store/store'
+import { storeImpi } from '../store/store'
 import { useState } from 'react'
+import aqua from '../img/img/aqua.png'
+
 
 import { spaceMarines,chaos,imperiums } from '../arrImage'
 import fraction1 from '../arrImage'
@@ -14,9 +17,9 @@ import fraction1 from '../arrImage'
 
 
 function Content(props) {
-
-let [numberCard, setNumberCard] = useState(2)
+let [numberCard, setNumberCard] = useState(4)
 let [fraction,setFraction] = useState(0) 
+console.log(fraction);
 let count = 0
 let selectedCard = 0 
 let selectedCard2 = 0 
@@ -25,14 +28,16 @@ let isAnimate = false
 
 
 
+
 const audioTerst = () =>{
-    if(count === 1){
-      store.dispatch({ type: 'show' })
+    if(count === numberCard/4){
+      storeImpi.dispatch({ type: 'show' })
     }
     if(count === numberCard/2){
       setTimeout(()=>{
         removeAllClass()
-        setFraction(fraction + 1)
+        store.dispatch({ type: 'plus' })
+        storeImpi.dispatch({ type: 'hide' })
       },1000)
       
     }
@@ -136,7 +141,7 @@ function removeAllClass(){
 
   return (
     <>
-      <div   className="content">
+      <div style={{backgroundImage: `url(${aqua})`}}   className="content">
         {imageCards}
 
       </div>

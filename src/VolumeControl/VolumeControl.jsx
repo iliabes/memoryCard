@@ -1,36 +1,44 @@
 import useSound from 'use-sound';
 import  './volumeControl.sass'
-import {  useEffect  } from 'react';
+import {  useEffect, useState  } from 'react';
+import soundImage from '../img/sound.png'
+import sound from '../sound'
+import {store} from '../store/store'
 
-import audSoup from '../img/audio/soup.mp3'
-import audOrks from '../img/audio/orks1.mp3'
+
 
 
 function VolumeControl(props) {
-  console.log('musik');
-
-  // const [play] = useSound(audSoup);
   let isMusik = false
-  const  soup = new Audio(audSoup);
-  const  orks = new Audio(audOrks);
+  let [mus, setMuse] = useState(store.getState().fraction.value)
+  store.subscribe(() => {
+
+    setMuse(store.getState().fraction.value)
+  })
+  console.log('number mus ',mus);
+
+  let musik = new Audio(sound[mus])
+
 
   useEffect(() => {
     document.addEventListener('click',()=>{
-      if(isMusik === true){
+      if(isMusik === false){
         isMusik = true
         console.log('musik')
-        soup.play()
+        musik.play()
       }
       
     })
   });
 
   function stopMusik(){
-    soup.pause()
+    musik.pause()
     console.log('stop');
   }
   return (
-      <div onClick={stopMusik}  className='volumeControl'>Звук</div>
+      <div onClick={stopMusik}  className='volumeControl'>
+        <img src={soundImage} alt="" />
+      </div>
   );
 }
 
