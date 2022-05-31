@@ -1,4 +1,4 @@
-import HeadBtn from "../HeadBtn/HeadBtn";
+
 import Logo from "../Logo/Logo";
 import './Header.sass'
 import Select from "../Select/Select";

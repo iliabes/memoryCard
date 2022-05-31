@@ -1,7 +1,7 @@
 import  './Select.sass'
 import { useState } from 'react';
 import Select1 from 'react-select'
-import { current } from '@reduxjs/toolkit';
+
 import { store } from '../store/store';
 
 const options = [
@@ -45,7 +45,7 @@ function Select(props) {
     console.log(e.value)
     setSelected(e.value);
    
-    switch('e.val',e.value){
+    switch(e.value){
       
       case 'space marine':store.dispatch({ type: 'space marine', });break;
       case 'tau':store.dispatch({ type: 'tau', });break;

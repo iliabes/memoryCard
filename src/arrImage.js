@@ -1,6 +1,6 @@
 
 
-export const spaceMarines = ['spaceMarine1','spaceMarine2','spaceMarine3','spaceMarine4','spaceMarine5','spaceMarine6','spaceMarine7','spaceMarine8','spaceMarine9','spaceMarine10','spaceMarine11','spaceMarine12','spaceMarine13','spaceMarine15']
+export const spaceMarines = ['spacemarine/spaceMarine1','spacemarine/spaceMarine2','spacemarine/spaceMarine3','spacemarine/spaceMarine4','spacemarine/spaceMarine5','spacemarine/spaceMarine6','spacemarine/spaceMarine7','spacemarine/spaceMarine8','spacemarine/spaceMarine9','spacemarine/spaceMarine10','spacemarine/spaceMarine11','spacemarine/spaceMarine12','spacemarine/spaceMarine13','spacemarine/spaceMarine14','spacemarine/spaceMarine15']
 export const chaos = ['chaos1','chaos2','chaos3','chaos4','chaos5','chaos6','chaos7','chaos8']
 export const tau = ['tau/tau1','tau/tau2','tau/tau3','tau/tau4','tau/tau5','tau/tau6','tau/tau7','tau/tau8','tau/tau9','tau/tau10']
 export const imperiums = ['impeiym4','impeiym5','impeiym6','impeiym9','eldar4','eldar3']

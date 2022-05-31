@@ -11,7 +11,7 @@ export default function FaceIndicator(props) {
 
     return (
         <div  className='faceIndicar'>
-            <img src={require( `../img/faceIndicator/${faceImg[face]}.jpeg`)}/>
+            <img alt='face fraction' src={require( `../img/faceIndicator/${faceImg[face]}.jpeg`)}/>
         </div>
     )
 }

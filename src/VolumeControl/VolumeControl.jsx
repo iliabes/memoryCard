@@ -1,4 +1,4 @@
-import useSound from 'use-sound';
+
 import  './volumeControl.sass'
 import {  useEffect, useState  } from 'react';
 import soundImage from '../img/sound.png'
