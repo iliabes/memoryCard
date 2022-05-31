@@ -4,7 +4,7 @@ import backFace from '../img/img/4.png'
 
 
 export default function Card(props) { 
-    console.log('card');
+
 
     return (
       <div data-pers={props.link} className="content-card">

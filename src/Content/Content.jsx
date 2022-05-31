@@ -17,16 +17,16 @@ import fraction1 from '../arrImage'
 
 
 function Content(props) {
-let [numberCard, setNumberCard] = useState(4)
+let [numberCard, setNumberCard] = useState(12)
 let [fraction,setFraction] = useState(0) 
-console.log(fraction);
+
 let count = 0
 let selectedCard = 0 
 let selectedCard2 = 0 
 let isAnimate = false
 
 
-
+console.log('context',fraction1);
 
 
 const audioTerst = () =>{
@@ -46,13 +46,16 @@ const audioTerst = () =>{
 
 function getImgForContext(array,numberCard){
   function randomSampling(numberCardInContext,array){
-      let innerArray = array 
+      let innerArray = array.slice()
       let newMassive = []
       while(newMassive.length != numberCardInContext){
+        
           let rand = getRandomInRange(0,innerArray.length-1)
           newMassive.push(innerArray[rand])
           innerArray.splice(rand,1)
+
       }
+      
       return newMassive
   }
   

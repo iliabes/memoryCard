@@ -11,15 +11,25 @@ header
     border-top: 1px solid #dfca12
     height: 80px
     flex: 0 0 auto
+    align-items: center
+    
     .header-contBtn-left
         display: flex
         flex-direction: row
         justify-content: space-around
+        align-items: center
 
 
 @media screen and (max-width: 1200px)
     header
         height: 60px
+        padding-bottom: 0px
+        padding-top: 0px
+        
+
+@media (max-width: 900px) and (orientation: landscape)
+    header
+        height: 30px
 
 
 // @media screen and (max-width: 992px)

@@ -9,7 +9,7 @@ import Impi from './Impi/Impi';
 
 function App() {
 let [fraction, setFraction] = useState(store.getState().fraction.value)
-store.subscribe(() => setFraction(store.getState().fraction.value))
+store.subscribe(() => {console.log('index.js',store.getState().fraction.value);setFraction(store.getState().fraction.value)})
 
 
  

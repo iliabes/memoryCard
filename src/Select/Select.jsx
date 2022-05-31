@@ -6,9 +6,8 @@ import { store } from '../store/store';
 
 const options = [
   { value: 'space marine', label: 'Space Marine' },
-  { value: 'tau', label: 'Tau' },
   { value: 'orks', label: 'Orks' },
-  { value: 'plus', label: 'plus' }
+  { value: 'tau', label: 'Tau' },
 ]
 
 
@@ -35,12 +34,19 @@ const customStyles = {
 
 
 function Select(props) {
-  let  [selected,setSelected]=useState('space marine')
+  let  [selected,setSelected]=useState(options[store.getState().fraction.value].label)
+  store.subscribe(() => {
 
+    setSelected(options[store.getState().fraction.value].label)
+  })
+  console.log('selected',selected);
 
   const onChange = (e)=> {
+    console.log(e.value)
     setSelected(e.value);
-    switch(e.value){
+   
+    switch('e.val',e.value){
+      
       case 'space marine':store.dispatch({ type: 'space marine', });break;
       case 'tau':store.dispatch({ type: 'tau', });break;
       case 'orks':store.dispatch({ type: 'orks', });break;
@@ -49,11 +55,12 @@ function Select(props) {
   }
 
   const getValue = ()=> {
-    return selected ? options.find( val => val.value === selected) : ''
+    console.log('getVallue');
+    return { value: 'space marine', label: selected }
   }
 
   return (
-    <Select1 onChange={onChange}  defaultValue={getValue} theme={'danger'} styles={customStyles} options={options} />
+    <Select1 onChange={onChange} value={{ value: 'space marine', label: selected }}  defaultValue={getValue} theme={'danger'} styles={customStyles} options={options} />
   );
 }
 

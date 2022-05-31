@@ -30,18 +30,18 @@ export function impi(state = { value: false }, action) {
       case 'plus':
         
         let numberFraction = state.value
-        console.log('plus',numberFraction);
+ 
         numberFraction++
         if(numberFraction > 2){numberFraction = 0}
         return { value: numberFraction }
       case 'space marine':
-        console.log('space marine');
+
         return { value: 0 }
       case 'orks':
-        console.log('orks');
+
         return { value: 1 }
       case 'tau':
-        console.log('tau');
+
         return { value: 2 }
       default:
         return state
