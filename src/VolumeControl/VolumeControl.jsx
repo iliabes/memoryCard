@@ -5,47 +5,59 @@ import soundImage from '../img/sound.png'
 import noSoundImage from '../img/no-sound.png'
 import sound from '../sound'
 import {store} from '../store/store'
+import { useRef } from 'react';
 
 
 
 
 function VolumeControl(props) {
   let [swith,setSwitch] = useState(1)
-  let isMusik = false
   let [mus, setMuse] = useState(store.getState().fraction.value)
+  let isMusik = useRef(false)
+  let musik = new Audio(sound[mus])
+  musik.volume = 0.2
+
+
   store.subscribe(() => {
     musik.pause()
+    musik.volume = 0
+    setSwitch(1)
     setMuse(store.getState().fraction.value)
   })
   
 
-  let musik = new Audio(sound[mus])
-  musik.volume = 0.2
 
   useEffect(() => {
     document.addEventListener('click',()=>{
-    
-      if(isMusik === false){
-        isMusik = true
-        console.log('musik')
+      if(isMusik.current === false){
         musik.play()
       }
-      
     })
-  },[mus]);
+  });
 
-  useEffect(()=>{
-    setSwitch(1)
-  },[mus])  
 
-  useEffect(()=>{
-    isMusik = false
-  },[swith])  
+
+
+
+
+
+
 
   function stopMusik(){
-    setSwitch(0)
-    musik.pause()
+    setSwitch(!swith)
+    isMusik.current = !isMusik.current
+    console.log(isMusik)
+    
+    if(isMusik.current === false){
+      musik.play()
+      console.log('play');
+    }else{
+      musik.pause()
+      
+      console.log('stop');
+    }
   }
+
   return (
       <div onClick={stopMusik}  className='volumeControl'>
         <img src={swith ? soundImage : noSoundImage} alt="" />

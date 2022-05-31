@@ -51,6 +51,7 @@ function Select(props) {
       case 'tau':store.dispatch({ type: 'tau', });break;
       case 'orks':store.dispatch({ type: 'orks', });break;
       case 'plus':store.dispatch({ type: 'plus', });break;
+      default: store.dispatch({ type: 'space marine', });break;
     }
   }
 
