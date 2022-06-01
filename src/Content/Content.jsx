@@ -15,7 +15,7 @@ import fraction1 from '../arrImage'
 
 function Content(props) {
 
-let numberCard = 4
+let numberCard = 12
 
 
 let count = 0
@@ -34,9 +34,11 @@ const audioTerst = () =>{
     if(count === numberCard/2){
       setTimeout(()=>{
         removeAllClass()
+      },1000)
+      setTimeout(()=>{
         store.dispatch({ type: 'plus' })
         storeImpi.dispatch({ type: 'hide' })
-      },1000)
+      },2000)
       
     }
 }
