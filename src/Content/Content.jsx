@@ -1,10 +1,8 @@
 
 import './Content.sass'
 import Card from '../Card/Card'
-
 import { store } from '../store/store'
 import { storeImpi } from '../store/store'
-// import { useState } from 'react'
 import aqua from '../img/img/aqua.png'
 
 
@@ -16,9 +14,9 @@ import fraction1 from '../arrImage'
 
 
 function Content(props) {
-// let [numberCard, setNumberCard] = useState(12)
+
 let numberCard = 12
-// let [fraction,setFraction] = useState(0) 
+
 
 let count = 0
 let selectedCard = 0 
@@ -26,7 +24,7 @@ let selectedCard2 = 0
 let isAnimate = false
 
 
-console.log('context',fraction1);
+
 
 
 const audioTerst = () =>{
@@ -36,9 +34,11 @@ const audioTerst = () =>{
     if(count === numberCard/2){
       setTimeout(()=>{
         removeAllClass()
+      },1000)
+      setTimeout(()=>{
         store.dispatch({ type: 'plus' })
         storeImpi.dispatch({ type: 'hide' })
-      },1000)
+      },2000)
       
     }
 }
