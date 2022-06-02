@@ -7,10 +7,11 @@ import {voice} from '../sound.js'
 import { store } from '../store/store';
 
 export default function Impi(props) { 
-
+    console.log('impi');
     let  [voiceEffect,setVoiceEffect]=useState(voice[store.getState().fraction.value])
     let  [pers,setPers] = useState(toastyPers[store.getState().fraction.value])
     let  [show, setShow] = useState(storeImpi.getState().value)
+    console.log(toastyPers);
     const  toasty = new Audio(voiceEffect);
     store.subscribe(() => {
         console.log('0000');

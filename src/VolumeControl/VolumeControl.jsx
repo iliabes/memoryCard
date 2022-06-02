@@ -6,7 +6,7 @@ import noSoundImage from '../img/no-sound.png'
 import sound from '../sound'
 import {store} from '../store/store'
 import { useRef } from 'react';
-
+// import s1 from sound
 
 
 
