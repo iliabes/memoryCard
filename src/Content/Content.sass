@@ -13,8 +13,44 @@
     background-size: cover
     background-position: center
     filter: invert(100%)
-    
-  
+    .win
+        position: absolute
+        width: 60%
+        height: 40%
+ 
+        border: 1px solid gold
+        z-index: 10
+        filter: invert(1) !important
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        border-radius: 5px
+        transform: translateX(200%)
+        transition: 2.3s
+        h1
+            color: #fff
+        img
+            width: 315px
+            height: 200px
+            border: 0px solid red
+        p
+            color: #fff
+            font-size: 1rem
+            font-style: italic
+            word-wrap: break-word 
+            text-align: center
+        button
+            position: absolute
+            top: 0
+            right: 0
+            padding: 10px
+
+    .win-show
+        transform: translateX(0) !important
+       
+        background-color: #290a0a
+
 
 @media screen and (max-width: 1500px)
         .content
@@ -32,11 +68,28 @@
 @media screen and (max-width: 768px)
         .content
             padding: 1%
+            .win
+                p
+                    font-size: 12px
 
 @media screen and (max-width: 576px)
         .content
             padding: 0.5%
+            .win
+                height: 50%
+                p
+                    font-size: 12px
 
+
+@media screen and (max-width: 900px) and (orientation: landscape)
+        .content
+            padding: 0.5%
+            .win
+                height: 70%
+                img
+                    width: 256px
+                p
+                    font-size: 12px
 
 
 

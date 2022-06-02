@@ -4,8 +4,8 @@ import Card from '../Card/Card'
 import { store } from '../store/store'
 import { storeImpi } from '../store/store'
 import aqua from '../img/img/aqua.png'
-
-
+import bolter from '../img/bolter.png'
+import { useState } from 'react'
 import fraction1 from '../arrImage'
 
 
@@ -14,6 +14,7 @@ import fraction1 from '../arrImage'
 
 
 function Content(props) {
+  let [win,setWin] = useState(0)
 
 let numberCard = 12
 
@@ -30,10 +31,12 @@ let isAnimate = false
 const audioTerst = () =>{
     if(count === numberCard/4){
       storeImpi.dispatch({ type: 'show' })
+      
     }
     if(count === numberCard/2){
       setTimeout(()=>{
         removeAllClass()
+        setWin(1)
       },1000)
       setTimeout(()=>{
         store.dispatch({ type: 'plus' })
@@ -145,6 +148,12 @@ function removeAllClass(){
   return (
     <>
       <div style={{backgroundImage: `url(${aqua})`}}   className="content">
+        <div className={win ? ' win-show win' :'win'}>
+          <h1>You win</h1>
+          <img alt='bolter' src={bolter}/>
+          <p>Убей мутанта, Сожги Еретика, Уничтожь Ксеноса!⁠⁠</p>
+          <button onClick={()=>{setWin(0)}}>x</button>
+        </div>
         {imageCards}
 
       </div>
