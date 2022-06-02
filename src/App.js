@@ -5,21 +5,28 @@ import Content from './Content/Content';
 import React, { useState } from 'react';
 import { store } from './store/store';
 import Impi from './Impi/Impi';
+import Preloader from './Preloader/Preloader';
+
 
 
 function App() {
+
 let [fraction, setFraction] = useState(store.getState().fraction.value)
 store.subscribe(() => {console.log('index.js',store.getState().fraction.value);setFraction(store.getState().fraction.value)})
 
 
+
  
     return (
+      <React.Fragment>
+        <Preloader/>
       <div className='wraper'>
         <Impi/>
         <Header/>
         <Content fraction={fraction}></Content>
         <Footer/>
       </div>
+      </React.Fragment>
     )
   }
 
