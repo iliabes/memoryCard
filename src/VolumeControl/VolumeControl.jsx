@@ -16,7 +16,7 @@ function VolumeControl(props) {
   let isMusik = useRef(false)
   let musik = new Audio(sound[mus])
   musik.volume = 0.2
-
+  musik.loop = true;
 
   store.subscribe(() => {
     musik.pause()
@@ -60,7 +60,7 @@ function VolumeControl(props) {
 
   return (
       <div onClick={stopMusik}  className='volumeControl'>
-        <img src={swith ? soundImage : noSoundImage} alt="" />
+        <img  src={swith ? soundImage : noSoundImage} alt="" />
       </div>
   );
 }

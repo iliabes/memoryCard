@@ -10,7 +10,7 @@ function Header() {
     <>
     <header>
         <Logo/>
-        <div className="header-contBtn-left">
+        <div    className="header-contBtn-left">
             <FaceIndicator/>
             <Select/>
             <VolumeControl/>

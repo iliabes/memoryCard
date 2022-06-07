@@ -19,7 +19,6 @@ store.subscribe(() => {console.log('index.js',store.getState().fraction.value);s
  
     return (
       <React.Fragment>
-        <Preloader/>
       <div className='wraper'>
         <Impi/>
         <Header/>

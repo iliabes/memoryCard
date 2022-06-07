@@ -5,9 +5,9 @@ import { store } from '../store/store'
 import { storeImpi } from '../store/store'
 import aqua from '../img/img/aqua.png'
 import bolter from '../img/bolter.png'
-import { useState } from 'react'
+import { useState,useRef,useEffect} from 'react'
 import fraction1 from '../arrImage'
-
+import Preloader from '../Preloader/Preloader';
 
 
 
@@ -15,6 +15,15 @@ import fraction1 from '../arrImage'
 
 function Content(props) {
   let [win,setWin] = useState(0)
+  let countRes = 0
+  const loadedImg = useRef(0);
+ 
+
+
+  useEffect(()=>{
+
+
+  })
 
 let numberCard = 12
 
@@ -23,9 +32,6 @@ let count = 0
 let selectedCard = 0 
 let selectedCard2 = 0 
 let isAnimate = false
-
-
-
 
 
 const audioTerst = () =>{
@@ -140,20 +146,32 @@ function removeAllClass(){
   })
 }
 
+function test(){
+  // cont.current
+  console.log(countRes);
+}
+
+function test2(){
+  loadedImg.current++
+  console.log('cont curent',loadedImg.current)
+}
 
   let imageCards = getImgForContext(fraction1[props.fraction],numberCard).map((item,index)=>{
-    return <Card functionRevers={removeAllClass} funcAddClass={reduserCard}   pers={item} key={index}  link={item}/>
+    return <Card  fnc={test2} functionRevers={removeAllClass} funcAddClass={reduserCard}   pers={item} key={index}  link={item}/>
   })
 
   return (
     <>
-      <div style={{backgroundImage: `url(${aqua})`}}   className="content">
+    <Preloader/>
+      <div  style={{backgroundImage: `url(${aqua})`}}   className="content">
         <div className={win ? ' win-show win' :'win'}>
           <h1>You win</h1>
-          <img alt='bolter' src={bolter}/>
+          <img  alt='bolter' src={bolter}/>
           <p>Убей мутанта, Сожги Еретика, Уничтожь Ксеноса!⁠⁠</p>
           <button onClick={()=>{setWin(0)}}>x</button>
+         
         </div>
+
         {imageCards}
 
       </div>
