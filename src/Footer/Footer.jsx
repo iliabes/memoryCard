@@ -1,8 +1,8 @@
 import './Footer.sass'
 import HeadBtn from '../HeadBtn/HeadBtn';
-import telegram from '../img/telegram.png'
-import githab from '../img/githab.png'
-import envelope from '../img/envelope.png'
+import telegram from '../img/icon/telegram.png'
+import githab from '../img/icon/githab.png'
+import envelope from '../img/icon/envelope.png'
 
 function Footer() {
 

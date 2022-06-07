@@ -1,5 +1,5 @@
 import './FaceIndicator.sass'
-import { faceImg } from '../arrImage'
+import { faceImg } from '../images'
 import { useState } from 'react'
 import { store } from '../store/store'
 

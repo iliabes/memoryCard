@@ -1,5 +1,5 @@
 import './Card.sass'
-import backFace from '../img/img/1111.webp'
+import backFace from '../img/img/backCard.webp'
 
 
 // {require('../img/'+props.link+'.jpg')}

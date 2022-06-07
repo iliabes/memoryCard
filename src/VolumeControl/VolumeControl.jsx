@@ -1,12 +1,12 @@
 
 import  './volumeControl.sass'
 import {  useEffect, useState  } from 'react';
-import soundImage from '../img/sound.png'
-import noSoundImage from '../img/no-sound.png'
-import sound from '../sound'
+import soundImage from '../img/icon/sound.png'
+import noSoundImage from '../img/icon/no-sound.png'
+import {sound} from '../sound'
 import {store} from '../store/store'
 import { useRef } from 'react';
-// import s1 from sound
+
 
 
 
@@ -15,7 +15,7 @@ function VolumeControl(props) {
   let [mus, setMuse] = useState(store.getState().fraction.value)
   let isMusik = useRef(false)
   let musik = new Audio(sound[mus])
-  musik.volume = 0.0
+  musik.volume = 0.2
   musik.loop = true;
 
   store.subscribe(() => {

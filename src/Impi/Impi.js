@@ -2,7 +2,7 @@ import './Impi.sass'
 import { useState } from 'react';
 import { storeImpi } from '../store/store';
 
-import { toastyPers } from '../arrImage';
+import { toastyPers } from '../images';
 import {voice} from '../sound.js'
 import { store } from '../store/store';
 

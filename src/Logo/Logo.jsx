@@ -1,5 +1,5 @@
 import  './Logo.sass'
-import logo from '../img/logo-white.png'
+import logo from '../img/img/logoMarine.webp'
 
 
 function Logo(props) {

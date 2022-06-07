@@ -3,10 +3,10 @@ import './Content.sass'
 import Card from '../Card/Card'
 import { store } from '../store/store'
 import { storeImpi } from '../store/store'
-import aqua from '../img/img/aqua.png'
-import bolter from '../img/bolter.png'
+import aqua from '../img/img/aqua.webp'
+import bolter from '../img/icon/bolter.png'
 import { useState,useRef,useEffect} from 'react'
-import fraction1 from '../arrImage'
+import fraction1 from '../images'
 import Preloader from '../Preloader/Preloader';
 
 
