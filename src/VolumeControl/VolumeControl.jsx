@@ -15,7 +15,7 @@ function VolumeControl(props) {
   let [mus, setMuse] = useState(store.getState().fraction.value)
   let isMusik = useRef(false)
   let musik = new Audio(sound[mus])
-  musik.volume = 0.2
+  musik.volume = 0.0
   musik.loop = true;
 
   store.subscribe(() => {
