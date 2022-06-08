@@ -7,11 +7,7 @@ import PacmanLoader from "react-spinners/PacmanLoader"
 export default function Preloader(props) { 
     let [loading, setLoading] = useState(true);
     useEffect(() => {
-      //coment for es lint
-      // eslint-disable-next-line
-      window.onload = new function() {
-        setLoading(false)
-      }
+      let timer = setInterval(()=>{setLoading(false)},2500)
       },[]);
 
     return (
