@@ -7,15 +7,17 @@ import {voice} from '../sound.js'
 import { store } from '../store/store';
 
 export default function Impi(props) { 
-    console.log('impi');
     let  [voiceEffect,setVoiceEffect]=useState(voice[store.getState().fraction.value])
     let  [pers,setPers] = useState(toastyPers[store.getState().fraction.value])
     let  [show, setShow] = useState(storeImpi.getState().value)
-    console.log(toastyPers);
-    const  toasty = new Audio(voiceEffect);
+    let  toasty = new Audio(voiceEffect);
+
     store.subscribe(() => {
-        console.log('0000');
-        toasty.volume = 0
+        if(toasty){
+            toasty.volume = 0
+            toasty = null
+        }
+      
         setVoiceEffect(voice[store.getState().fraction.value])
         setPers(toastyPers[store.getState().fraction.value])
     })
@@ -23,10 +25,8 @@ export default function Impi(props) {
     
 
     storeImpi.subscribe(() => {
-        
         setShow(storeImpi.getState().value )
-        console.log(storeImpi.getState().value);
-        if(storeImpi.getState().value === true){
+        if(storeImpi.getState().value === true && toasty){
             toasty.play()
         }
     })

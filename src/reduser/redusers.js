@@ -25,23 +25,17 @@ export function impi(state = { value: false }, action) {
   }
 
   export function fraction(state = { value: 0 }, action) {
-  
     switch (action.type) {
       case 'plus':
-        
         let numberFraction = state.value
- 
         numberFraction++
         if(numberFraction > 2){numberFraction = 0}
         return { value: numberFraction }
       case 'space marine':
-
         return { value: 0 }
       case 'orks':
-
         return { value: 1 }
       case 'tau':
-
         return { value: 2 }
       default:
         return state

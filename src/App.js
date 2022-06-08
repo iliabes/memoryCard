@@ -2,8 +2,7 @@ import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Content from './Content/Content';
-import React, { useState } from 'react';
-import { store } from './store/store';
+import React from 'react';
 import Impi from './Impi/Impi';
 import Preloader from './Preloader/Preloader';
 
@@ -11,8 +10,6 @@ import Preloader from './Preloader/Preloader';
 
 function App() {
 
-let [fraction, setFraction] = useState(store.getState().fraction.value)
-store.subscribe(() => {console.log('index.js',store.getState().fraction.value);setFraction(store.getState().fraction.value)})
 
 
 
@@ -22,7 +19,7 @@ store.subscribe(() => {console.log('index.js',store.getState().fraction.value);s
       <div className='wraper'>
         <Impi/>
         <Header/>
-        <Content fraction={fraction}></Content>
+        <Content ></Content>
         <Footer/>
       </div>
       </React.Fragment>

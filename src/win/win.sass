@@ -1,21 +1,42 @@
-.impi
-    z-index: 10
-    height: 200px
-    width:  200px
+.win
     position: absolute
-    bottom: 0
-    right: 20px
-    transform: translateX(240px)
+    width: 60%
+    height: 40%
+    border: 1px solid gold
+    z-index: 999
+    // filter: invert(1) !important
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+    border-radius: 5px
+    transform: translateX(200%)
+    transition: 2.3s
+    left: 20%
+    bottom: 30%
+
+    h1
+        color: #fff
     img
-      height: 200px
-      width: 155px
+        width: 315px
+        height: 200px
+        border: 0px solid red
+    p
+        color: #fff
+        font-size: 1rem
+        font-style: italic
+        word-wrap: break-word 
+        text-align: center
+    button
+        position: absolute
+        top: 0
+        right: 0
+        padding: 10px
 
 
-
-.impi-animate
-    animation-name: impi-left 
-    animation-duration: 1.4s
-
+.win-show
+    transform: translateX(0) !important
+    background-color: #290a0a
 
 @keyframes impi-left 
   from 
@@ -32,7 +53,25 @@
   
 
 
+@media screen and (max-width: 768px)
+  .win
+      p
+        font-size: 12px
 
+@media screen and (max-width: 576px)
+    .win
+        height: 50%
+        p
+          font-size: 12px
+
+
+@media screen and (max-width: 900px) and (orientation: landscape)
+  .win
+    height: 70%
+    img
+        width: 256px
+    p
+        font-size: 12px
 
 
 

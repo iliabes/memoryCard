@@ -36,13 +36,13 @@ const customStyles = {
 function Select(props) {
   let  [selected,setSelected]=useState(options[store.getState().fraction.value].label)
   store.subscribe(() => {
-
     setSelected(options[store.getState().fraction.value].label)
   })
-  console.log('selected',selected);
+  
+
 
   const onChange = (e)=> {
-    console.log(e.value)
+
     setSelected(e.value);
    
     switch(e.value){
@@ -56,7 +56,6 @@ function Select(props) {
   }
 
   const getValue = ()=> {
-    console.log('getVallue');
     return { value: 'space marine', label: selected }
   }
 

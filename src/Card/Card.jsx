@@ -2,7 +2,7 @@ import './Card.sass'
 import backFace from '../img/img/backCard.webp'
 
 
-// {require('../img/'+props.link+'.jpg')}
+
 
 
 
@@ -21,4 +21,3 @@ export default function Card(props) {
     );
 }
 
-// require('../img/'+props.link+'.jpg')
