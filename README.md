@@ -20,3 +20,6 @@
 
 ### `npm start`
 
+
+#### Ссылка на проект
+https://zippy-naiad-c0d8ef.netlify.app/
